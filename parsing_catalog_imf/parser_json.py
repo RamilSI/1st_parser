@@ -85,11 +85,11 @@ for item in data_json['products']:
         # print(i)
 
 
-with open('my_14.json', 'w') as f:
+with open('parsing_catalog_imf/json_file/my_14.json', 'w') as f:
     json.dump(data_json['products'],f, indent=2)
 
 
-with open('my_14.json') as f:
+with open('parsing_catalog_imf/json_file/my_14.json') as f:
   data = json.load(f)
 print(data)
 
@@ -105,4 +105,4 @@ df['products_title'][221] = df['products_title'][221].replace('/','-')
 
 #print(df)
 
-df.to_csv('my7_1.csv', index=False)
+df.to_csv('parsing_catalog_imf/csv_files/my7_1.csv', index=False)

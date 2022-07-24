@@ -2,7 +2,7 @@ import os
 
 
 
-path = 'uploads'
+path = '../uploads'
 
 print(os.listdir(path))
 #
@@ -22,7 +22,7 @@ print(os.listdir(path))
 
 # obhodFile(path)
 
-path = 'uploads'
+path = '../uploads'
 for item in os.listdir(path):
     for i in os.listdir(path + '/' + item):
         if '.jpeg' not in i:

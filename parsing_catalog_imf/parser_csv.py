@@ -3,7 +3,7 @@ import os
 import requests
 
 
-with open ('my7.csv', encoding='utf8') as csvfile:
+with open ('../my7.csv', encoding='utf8') as csvfile:
     reader = csv.reader(csvfile)
     next(reader)
     for row in reader:
