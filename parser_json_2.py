@@ -13,9 +13,9 @@ for item in data_json_2:
     print(item)
 
 
-#with open('my_5.json', 'w') as f:
-#    json.dump(data_json_2,f, indent=2)
-#
+with open('my_5.json', 'w') as f:
+   json.dump(data_json_2,f, indent=2)
+
 # #for item in data_json['products']:
 #     # print (item)
 #
