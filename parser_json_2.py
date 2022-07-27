@@ -2,6 +2,7 @@ import json
 import os
 
 
+url = 'https://store.tildacdn.com/api/getproductslist/?storepartuid=105150852661&recid=420874855&c=1658871063166&getparts=true&getoptions=true&slice=1&&size=100'
 
 with open('parsing_catalog_imf/json_file/filename.json') as f:
     data_json_2 = json.load(f)

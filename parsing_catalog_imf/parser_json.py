@@ -5,7 +5,7 @@ import numpy as np
 
 
 # считываем данные json файла в переменную data_json
-with open('parsing_catalog_imf/json_file/index2.json') as f:
+with open('parsing_catalog_imf/json_file/index2_2.json') as f:
     data_json = json.load(f)
 
 # смотрим что получилось
@@ -91,18 +91,27 @@ with open('parsing_catalog_imf/json_file/my_14.json', 'w') as f:
 
 with open('parsing_catalog_imf/json_file/my_14.json') as f:
   data = json.load(f)
-print(data)
+# print(data)
 
-df = pd.json_normalize(data, record_path=['editions'], meta=['title','url'], meta_prefix='products_',
-                                    record_prefix='editions_')
+df = pd.json_normalize(data, record_path=['editions'], meta=['title','url'], meta_prefix='products_', record_prefix='editions_')
 df['editions_img'].replace('', np.nan, inplace=True)
 df.dropna(subset=['editions_img'], inplace=True)
 df['editions_Цвет'] = df['editions_Цвет'].fillna('бесцветный')
 for i,e in enumerate (df['editions_Цвет']):
   if '/' in e:
     df['editions_Цвет'][i] = e.replace('/','-')
-df['products_title'][221] = df['products_title'][221].replace('/','-')
 
-#print(df)
 
-df.to_csv('parsing_catalog_imf/csv_files/my7_1.csv', index=False)
+
+
+df.to_csv('parsing_catalog_imf/csv_files/my7_2.csv', index=False)
+
+df = pd.read_csv('parsing_catalog_imf/csv_files/my7_2.csv')
+for i,e in enumerate (df['products_title']):
+  if '/' in e:
+      df['products_title'][i] = df['products_title'][i].replace('/','-')
+  print(df['products_title'][i])
+
+print(len(df))
+
+df.to_csv('parsing_catalog_imf/csv_files/my7_2.csv', index=False)

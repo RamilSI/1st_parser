@@ -3,9 +3,10 @@ import os
 import requests
 
 
-with open ('../my7.csv', encoding='utf8') as csvfile:
+with open ('parsing_catalog_imf/csv_files/my7_2.csv', encoding='utf8') as csvfile:
     reader = csv.reader(csvfile)
     next(reader)
+
     for row in reader:
         url = row[0]
         subdir = row[2]

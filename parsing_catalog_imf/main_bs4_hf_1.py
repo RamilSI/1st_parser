@@ -10,13 +10,14 @@ def get_data(url):
         "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36"}
     req = requests.get(url=url, headers=headers)
 
-    with open('./json_file/index2.json', 'a') as file:
+    with open('parsing_catalog_imf/json_file/index2_2.json', 'w') as file:
         file.write(req.text)
 
 
 
 url = 'https://store.tildacdn.com/api/getproductslist/?storepartuid=105150852661'
+url_2 = 'https://store.tildacdn.com/api/getproductslist/?storepartuid=105150852661&recid=420874855&c=1658871063166&getparts=true&getoptions=true&slice=1&&size=100'
 
 
-get_data(url)
+get_data(url_2)
 
